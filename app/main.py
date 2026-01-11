@@ -116,5 +116,5 @@ def download(job_id: str, file_type: str) -> FileResponse:
         raise HTTPException(status_code=404, detail="File not available")
 
     media_type = "application/octet-stream"
-    filename = path.name
-    return FileResponse(path, media_type=media_type, filename=filename)
+    return FileResponse(path, media_type=media_type, filename="output.bin")
+
