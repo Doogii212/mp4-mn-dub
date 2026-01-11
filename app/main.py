@@ -4,7 +4,13 @@ from pathlib import Path
 from typing import Dict
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse
+
+# жишээ:
+return FileResponse(result["mp4_hard"], filename="subtitled.mp4")
+# эсвэл SRT:
+return FileResponse(result["srt"], filename="subs.srt")
+
 
 from app.pipeline import run_pipeline
 
